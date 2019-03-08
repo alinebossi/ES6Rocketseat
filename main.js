@@ -1,12 +1,31 @@
-alert('teste');
 
-class teste {
+class List {
 
-    metodo(){
-
+    constructor(){
+        this.toDos = [];
     }
 
-    outros(){
-
+    add(data){
+        this.toDos.push(data);
     }
 }
+
+class ToDoList extends List {
+    constructor(){
+       super();
+
+       this.usuario = 'Aline';
+    }
+
+    mostraUsr(){
+        console.log(this.usuario);
+    }
+}
+
+const list = new ToDoList();
+
+document.getElementById('novoToDo').onclick = function(){
+    list.add('Novo Todo');
+}
+
+list.mostraUsr();
